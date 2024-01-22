@@ -78,8 +78,6 @@ class InAppReceiptRefreshRequest: NSObject, SKRequestDelegate, InAppRequest {
         performCallback(.error(e: error))
     }
     private func performCallback(_ result: ResultType) {
-        DispatchQueue.main.async {
-            self.callback(result)
-        }
+        self.callback(result)
     }
 }

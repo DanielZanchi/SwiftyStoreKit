@@ -86,8 +86,6 @@ class InAppProductQueryRequest: NSObject, InAppProductRequest, SKProductsRequest
     }
     
     private func performCallback(_ results: RetrieveResults) {
-        DispatchQueue.main.async {
-            self.callback(results)
-        }
+        self.callback(results)
     }
 }

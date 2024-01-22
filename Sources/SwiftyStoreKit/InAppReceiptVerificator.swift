@@ -108,12 +108,10 @@ class InAppReceiptVerificator: NSObject {
      *  - Parameter completion: handler for result
      */
     private func verify(receiptData: Data, using validator: ReceiptValidator, completion: @escaping (VerifyReceiptResult) -> Void) {
-     
+        
         validator.validate(receiptData: receiptData) { result in
             
-            DispatchQueue.main.async {
-                completion(result)
-            }
+            completion(result)
         }
     }
 }
